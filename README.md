@@ -2,7 +2,7 @@
 
 An example for illustrating how to integrate ipfs-http-client with Express.js
 
-To run this example, ensure you have install node and run IPFS instance locally.
+To run this example, ensure you have installed Node.js and run the IPFS instance locally.
 
 First, you need to install dependencies:
 
