@@ -19,9 +19,11 @@ app.use(fileUpload({
 
 app.post('/ipfs/upload', async (req, res) => {
     try{ 
+        // The file upload middleware has save the file for us. We just create a read steam for IPFS http client.
         const resp = await IPFSclient.add({
             content: createReadStream(req.files.record.tempFilePath)
         })
+        // Return cid once finish adding.
         res.status(200).send(resp.cid.toString()) 
     }catch(e) {
         res.status(500).send("Server error.")
@@ -30,6 +32,7 @@ app.post('/ipfs/upload', async (req, res) => {
 
 app.get('/ipfs/get', async (req, res) => {
     try {
+        // Cat the file according to the cid.
         const cid = req.query.cid
         for await (const buf of IPFSclient.cat(cid)) {
             res.write(buf)

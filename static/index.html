@@ -30,18 +30,13 @@
       });
       console.log("uploaded.");
       const text = await resp.text();
-      console.log(text);
       document.querySelector("#cid").textContent = text;
     }
 
     async function cat() {
-
         const cid = document.querySelector('#cid_input').value
-   
         const resp = await fetch(`/ipfs/get?cid=${cid}`)
-
         const text = await resp.text()
-
         document.querySelector('#content').textContent = text
     }
 
