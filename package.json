@@ -1,0 +1,17 @@
+{
+  "name": "express-ipfs",
+  "version": "1.0.0",
+  "description": "An example for showing how to use ipfs-http-client with Express.js",
+  "main": "index.js",
+  "author": "bblwbtd",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
+    "ipfs-http-client": "^56.0.1"
+  },
+  "scripts": {
+    "dev": "node index.js"    
+  },
+  "type": "module"
+}
