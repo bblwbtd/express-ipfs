@@ -31,7 +31,7 @@ app.post('/ipfs/upload', async (req, res) => {
 app.get('/ipfs/get', async (req, res) => {
     try {
         const cid = req.query.cid
-        for await (const buf of IPFSclient.get(cid)) {
+        for await (const buf of IPFSclient.cat(cid)) {
             res.write(buf)
         }
         res.status(200).end()

@@ -28,7 +28,6 @@
         method: "POST",
         body: formData,
       });
-      console.log(resp);
       console.log("uploaded.");
       const text = await resp.text();
       console.log(text);
@@ -43,7 +42,7 @@
 
         const text = await resp.text()
 
-        document.querySelector('#content').textContent = text.substring(text.indexOf('\n'))
+        document.querySelector('#content').textContent = text
     }
 
   </script>
